@@ -1,4 +1,4 @@
-# [ICASSP'26] TRM-UNet
+# [ICASSP'26] TRM-UNET: An Efficient Event-Guided Motion Deblurring Network
 
 ## Installation
 
