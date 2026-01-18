@@ -7,6 +7,7 @@ New state-of-the-art performance on the GoPro dataset while using only 64.1% of 
 ## Installation
 
 The model is built in PyTorch 2.5.1+cu124 and tested on Ubuntu 20.04 environment (Python 3.10, nvcc 12.8, mamba_ssm 2.2.2).
+We use 4 NVIDIA RTX3090s for training. The time for 1 epoch (1000 iterations) is within 55 minutes, including both training and validating.
 
 ## Training and Evaluation
 ### Train
