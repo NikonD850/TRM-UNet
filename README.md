@@ -17,7 +17,7 @@ Install warmup scheduler
 
 ### Evaluation
 - Download the [GoPro events test dataset](https://pan.baidu.com/s/1UKV-sPGo9mRf7XJjZDoF7Q) (code: kmaz) to ./Datasets
-- Download the pretrained model TODO
+- Download the [pretrained model](https://drive.google.com/file/d/1NAVTfdbPVsU1MIbuRhS0V4C6BMPzAecJ/view?usp=sharing) to TRM-UNet/model/TRM-UNet/model_best.pth
 - Test the model with default arguments by running
 
   python main_test.py
