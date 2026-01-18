@@ -1,5 +1,5 @@
 # [ICASSP'26] TRM-UNet: An Efficient Event-Guided Motion Deblurring Network
-New state-of-the-art performance on the GoPro dataset while using only 64.1% of the parameters and 78.3% of the FLOPs compared to leading methods.
+New state-of-the-art performance on the GoPro dataset while using only 64.1% of the parameters and 78.3% of the FLOPs compared to leading method AHDINet.
 ![Comparison](cmp.png)
 
 **The full repo will be released after the conference.**
