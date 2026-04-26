@@ -11,13 +11,29 @@ TL;DR: New state-of-the-art performance on the GoPro dataset while using only 64
 ![Comparison](cmp.png)
 
 ## Installation
+```
+git clone https://github.com/NikonD850/TRM-UNet.git
+cd TRM-UNet
 
-The model is built in PyTorch 2.5.1+cu124 and tested on Ubuntu 20.04 environment (Python 3.10, nvcc 12.8, mamba_ssm 2.2.2).
-We use 4 NVIDIA RTX3090s for training. The time for 1 epoch (1000 iterations) is within 55 minutes, including both training and validating.
+conda create -n trm-unet python=3.10 -y
+conda activate trm-unet
+pip install torch==2.5.1+cu124 torchvision==0.20.1+cu124 --index-url https://download.pytorch.org/whl/cu124
 
-For step-by-step environment setup and **TRAINING SPEED UP**, please follow our [new repository](https://github.com/NikonD850/NTIRE26_event_deblur).
+git clone https://github.com/state-spaces/mamba.git
+cd mamba
+git checkout 8ffd905
+python -m pip install . --no-build-isolation
+cd ..
+
+python -m pip install matplotlib scikit-image opencv-python yacs joblib natsort h5py tqdm timm thop
+```
 
 ## Training and Evaluation
+The model is trained with 4 NVIDIA RTX 3090 24G, Ubuntu 20.04, NVIDIA Driver 570.86.10 and nvcc 12.8 .
+
+The time for 1 epoch (1000 iterations) is within 55 minutes, including both training and validating.
+
+For **TRAINING SPEED UP**, please follow our [new repository](https://github.com/NikonD850/NTIRE26_event_deblur).
 ### Train
 - Download the [GoPro events train/test dataset](https://pan.baidu.com/s/1UKV-sPGo9mRf7XJjZDoF7Q) (code: kmaz) to your data root (provided by AHDINet's authors)
 - Change both training.yml and config.py to your settings.
@@ -29,6 +45,7 @@ For step-by-step environment setup and **TRAINING SPEED UP**, please follow our 
 ### Evaluation
 - Download the [GoPro events test dataset](https://pan.baidu.com/s/1UKV-sPGo9mRf7XJjZDoF7Q) (code: kmaz) to your data root (provided by AHDINet's authors)
 - Download the [pretrained model](https://drive.google.com/file/d/1NAVTfdbPVsU1MIbuRhS0V4C6BMPzAecJ/view?usp=sharing) to TRM-UNet-512/models/TRM-UNet/model_best.pth
+- Change both testing.yml and config.py to your settings.
 - Test the model with default arguments by running
 
 ```
