@@ -15,17 +15,25 @@ TL;DR: New state-of-the-art performance on the GoPro dataset while using only 64
 git clone https://github.com/NikonD850/TRM-UNet.git
 cd TRM-UNet
 
+# Create Conda Env
 conda create -n trm-unet python=3.10 -y
 conda activate trm-unet
 pip install torch==2.5.1+cu124 torchvision==0.20.1+cu124 --index-url https://download.pytorch.org/whl/cu124
 
+# Install Mamba
 git clone https://github.com/state-spaces/mamba.git
 cd mamba
 git checkout 8ffd905
 python -m pip install . --no-build-isolation
 cd ..
 
+# Install other dependences
 python -m pip install matplotlib scikit-image opencv-python yacs joblib natsort h5py tqdm timm thop
+
+# Install warm-up
+cd pytorch-gradual-warmup-lr
+python setup.py install
+cd ..
 ```
 
 ## Training and Evaluation
